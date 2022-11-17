@@ -13,13 +13,13 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Link
-              className={path.pathname === "/" ? "nav-link active ms-3" : "ms-3 nav-link"}
+              className={path.pathname === "/FrontEnd-ats/" ? "nav-link active ms-3" : "ms-3 nav-link"}
               to={routes.registerEmployee}
             >
               Add Employee
             </Link>
             <Link
-              className={path.pathname === "/all_employees" ? "nav-link active ms-3" : "ms-3 nav-link"}
+              className={path.pathname === "/FrontEnd-ats/all_employees" ? "nav-link active ms-3" : "ms-3 nav-link"}
               to={routes.allEmployees}
             >
               Employees
