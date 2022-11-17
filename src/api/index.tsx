@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = "https://a626-112-79-203-247.in.ngrok.io";
+const BASE_URL = "https://backend-server-ats.herokuapp.com";
 const get = async (url: string, _config: any = {}) => {
   const config: any = { ..._config };
   return await axios.get(url, { ...config }).then((res: any) => res.data);

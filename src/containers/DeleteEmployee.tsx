@@ -3,6 +3,7 @@ import user from "../api";
 import DeleteEmployeeForm from "../components/DeleteEmployeeForm";
 
 const DeleteEmployee = ({ setShowDeleteAppModal, employeeId, loadAllEmployees }: any) => {
+  console.log(employeeId);
   const [loading, setloading] = useState<boolean>(false);
   const deleteEmployee = async () => {
     setloading(true);
