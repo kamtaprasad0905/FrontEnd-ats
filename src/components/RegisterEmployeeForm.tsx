@@ -131,7 +131,7 @@ const RegisterEmployeeForm = ({ addEmployeeCallBack, loading }: any) => {
           </div>
         </Row>
 
-        <Button type="submit" className="mb-4" variant="success">
+        <Button type="submit" disabled={loading} className="mb-4" variant="success">
           {!loading ? "Submit Details" : "Submitting..."}
         </Button>
       </Form>

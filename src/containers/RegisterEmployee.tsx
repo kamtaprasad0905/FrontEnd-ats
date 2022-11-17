@@ -14,9 +14,7 @@ const RegisterEmployee = () => {
     const res = await user.addEmployee(params);
     setloading(false);
     if (res.status === 201) {
-      setTimeout(() => {
-        navigate(routes.allEmployees);
-      }, 1000);
+      navigate(routes.allEmployees);
     } else {
       return;
     }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
 import user from "../api";
 import EmployeesList from "../components/EmployeesList";
 import Header from "../shared/Header";
@@ -18,9 +19,15 @@ const Employees = () => {
   return (
     <>
       <Header />
-
-      {employees && loadAllEmployees && (
-        <EmployeesList employees={employees} loading={loading} loadAllEmployees={loadAllEmployees} />
+      {!loading ? (
+        employees &&
+        loadAllEmployees && (
+          <EmployeesList employees={employees} loading={loading} loadAllEmployees={loadAllEmployees} />
+        )
+      ) : (
+        <div className="d-flex justify-content-center vh-100" style={{ marginTop: "20%" }}>
+          <Spinner animation="border" className="p-5 text-success" role="status"></Spinner>
+        </div>
       )}
     </>
   );
