@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
 import user from "../api";
 import EditEmployeeDetailForm from "../components/EditEmployeeDetailForm";
 import { EmployeeDetailParams } from "../interfaces/EmployeeDetailParams";
@@ -29,8 +30,18 @@ const EditEmployeeDetail = ({ employeeId, setShowAppModal, loadAllEmployees }: a
   };
   return (
     <>
-      {employeeDetail && (
-        <EditEmployeeDetailForm employeeDetail={employeeDetail} loading={loading} editEmployeeCallBack={editEmployee} />
+      {!loading ? (
+        employeeDetail && (
+          <EditEmployeeDetailForm
+            employeeDetail={employeeDetail}
+            loading={loading}
+            editEmployeeCallBack={editEmployee}
+          />
+        )
+      ) : (
+        <div className="d-flex justify-content-center">
+          <Spinner animation="border" className="p-5 text-success" role="status"></Spinner>
+        </div>
       )}
     </>
   );
