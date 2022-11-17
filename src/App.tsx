@@ -1,25 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import routes from "./constants/routes";
+import RegisterEmployee from "./containers/RegisterEmployee";
+import Error404 from "./Error/Error404";
+import Employees from "./containers/Employees";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path={routes.registerEmployee} element={<RegisterEmployee />} />
+      <Route path={routes.allEmployees} element={<Employees />} />
+      <Route path="*" element={<Error404 />} />
+    </Routes>
   );
 }
 
