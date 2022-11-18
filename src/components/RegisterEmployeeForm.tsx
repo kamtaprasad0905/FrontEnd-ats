@@ -37,7 +37,7 @@ const RegisterEmployeeForm = ({ addEmployeeCallBack, loading }: any) => {
 
     setValidated(true);
   };
-
+  const validForm = () => email && position && state && lastName && firstName && city;
   return (
     <div className="container shadow p-3 mb-5 bg-white rounded" style={{ marginTop: "10%" }}>
       <Form noValidate validated={validated} onSubmit={handleSubmit}>
@@ -131,7 +131,7 @@ const RegisterEmployeeForm = ({ addEmployeeCallBack, loading }: any) => {
           </div>
         </Row>
 
-        <Button type="submit" disabled={loading} className="mb-4" variant="success">
+        <Button type="submit" disabled={loading || !validForm()} className="mb-4" variant="success">
           {!loading ? "Submit Details" : "Submitting..."}
         </Button>
       </Form>

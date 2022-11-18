@@ -34,7 +34,7 @@ const EditEmployeeDetail = ({ employeeId, setShowAppModal, loadAllEmployees }: a
         employeeDetail && (
           <EditEmployeeDetailForm
             employeeDetail={employeeDetail}
-            loading={loading}
+            loading={!loading}
             editEmployeeCallBack={editEmployee}
           />
         )

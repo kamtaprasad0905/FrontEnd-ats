@@ -37,6 +37,7 @@ const EditEmployeeDetailForm = ({ employeeDetail, loading, editEmployeeCallBack 
 
     setValidated(true);
   };
+
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
       <Row className="mb-3">
@@ -138,10 +139,10 @@ const EditEmployeeDetailForm = ({ employeeDetail, loading, editEmployeeCallBack 
         </div>
       ) : (
         <div>
-          <Button type="submit" disabled={loading} className="mb-2" variant="outline-success">
-            {loading ? "Saving" : "Save"}
+          <Button type="submit" disabled={!loading} className="mb-2" variant="outline-success">
+            {!loading ? "Saving" : "Save"}
           </Button>
-          {!loading ? (
+          {loading ? (
             <div onClick={() => setEnableInputField(false)} className="mb-2 ms-3 btn btn-danger">
               Cancel
             </div>
